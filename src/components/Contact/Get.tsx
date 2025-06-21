@@ -204,22 +204,7 @@ const ContactForm = () => {
             {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
           </div>
 
-          <div>
-            <div className="flex items-center gap-3">
-              <input
-                type="checkbox"
-                id="agreed"
-                name="agreed"
-                checked={formData.agreed}
-                onChange={handleChange}
-                className="h-5 w-5 rounded border-gray-300 text-black focus:ring-black"
-              />
-              <label htmlFor="agreed" className="text-base text-gray-700">
-                I Agree with Privacy Policy and Cookie Policy
-              </label>
-            </div>
-            {errors.agreed && <p className="text-red-500 text-sm mt-1">{errors.agreed}</p>}
-          </div>
+          
 
           <button
             type="submit"
