@@ -1,4 +1,14 @@
+import { Link } from "react-router-dom";
+
 function Contact() {
+  const handleContactClick = () => {
+    // Scroll to top smoothly when the link is clicked
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <div className="w-full max-w-6xl mx-auto p-8 sm:p-12 rounded-2xl my-12 bg-white relative overflow-hidden shadow-lg">
       {/* Background Pattern */}
@@ -21,12 +31,16 @@ function Contact() {
           Do you have any project idea you want to discuss about?
         </h1>
 
-        <button className="bg-black text-white hover:bg-gray-800 transition-colors duration-200 px-8 py-4 sm:px-10 sm:py-5 rounded-2xl text-lg font-medium">
+        <Link 
+          to="/contact"
+          onClick={handleContactClick}
+          className="bg-black text-white hover:bg-gray-800 transition-colors duration-200 px-8 py-4 sm:px-10 sm:py-5 rounded-2xl text-lg font-medium inline-block"
+        >
           Contact Me
-        </button>
+        </Link>
       </div>
     </div>
-  )
+  );
 }
 
 export default Contact;

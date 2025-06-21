@@ -1,113 +1,142 @@
+import { SiReact, SiVuedotjs, SiTailwindcss, SiFlutter, SiNextdotjs, SiGit, SiGithub, SiFigma, SiTrello, SiSlack } from "react-icons/si";
+import { Link } from "react-router-dom";
+
 function StackDetailed() {
+   const handleContactClick = () => {
+    // Scroll to top smoothly when the link is clicked
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+  const frontendTech = [
+    {
+      icon: <SiReact className="w-8 h-8 text-blue-500" />,
+      name: "React",
+      description: "I use React to build fast and interactive user interfaces with reusable components and efficient state management.",
+    },
+    {
+      icon: <SiVuedotjs className="w-8 h-8 text-green-500" />,
+      name: "Vue.js",
+      description: "Vue.js helps me build maintainable frontend applications with a progressive approach and clear structure.",
+    },
+    {
+      icon: <SiTailwindcss className="w-8 h-8 text-cyan-500" />,
+      name: "Tailwind CSS",
+      description: "I use Tailwind CSS to rapidly create beautiful, responsive designs using utility-first CSS classes.",
+    },
+    {
+      icon: <SiFlutter className="w-8 h-8 text-blue-400" />,
+      name: "Flutter",
+      description: "Flutter allows me to build visually attractive, natively compiled applications for mobile, web, and desktop from a single codebase.",
+    },
+    {
+      icon: <SiNextdotjs className="w-8 h-8 text-black" />,
+      name: "Next.js",
+      description: "Next.js provides me with server-side rendering, routing, and performance optimizations for production-grade React applications.",
+    },
+  ];
+
+  const devTools = [
+    {
+      icon: <SiGit className="w-8 h-8 text-orange-500" />,
+      name: "Git",
+      description: "I use Git for version control, allowing me to manage code history, branches, and collaborate effectively.",
+    },
+    {
+      icon: <SiGithub className="w-8 h-8 text-gray-800" />,
+      name: "GitHub",
+      description: "GitHub is my go-to platform for hosting code, managing repositories, and collaborating with others using pull requests and issues.",
+    },
+  ];
+
   const designTools = [
     {
-      icon: "🎨",
+      icon: <SiFigma className="w-8 h-8 text-purple-500" />,
       name: "Figma",
-      description:
-        "I use Figma for creating wireframes, prototypes, and high-fidelity UI designs. Its real-time collaboration features make it perfect for working closely with teams and getting instant feedback.",
+      description: "Figma is my favorite tool for UI design, prototyping, and collaboration with teams in real-time.",
     },
-    {
-      icon: "🖱️",
-      name: "Framer",
-      description:
-        "I use Framer when I need to create high-fidelity prototypes with advanced animations and micro-interactions to test user behavior and refine designs.",
-    },
-    {
-      icon: "🌊",
-      name: "Webflow",
-      description:
-        "I use Webflow to build responsive websites without coding, allowing for full design control and seamless interactions while ensuring a smooth user experience.",
-    },
-    {
-      icon: "💎",
-      name: "Sketch",
-      description:
-        "Sketch is my go-to tool for crafting scalable vector designs and maintaining reusable components, which makes managing design systems much easier.",
-    },
-    {
-      icon: "🎭",
-      name: "Photoshop",
-      description:
-        "I turn to Photoshop for advanced image editing, photo manipulation, and creating complex visual compositions that require pixel-perfect precision.",
-    },
-    {
-      icon: "🎯",
-      name: "Adobe XD",
-      description:
-        "Adobe XD helps me create interactive prototypes and design systems with seamless handoff capabilities for development teams.",
-    },
-    {
-      icon: "🎨",
-      name: "Illustrator",
-      description:
-        "I turn to Illustrator for designing vector-based UI elements like logos and custom illustrations that need to be crisp and scalable.",
-    },
-    {
-      icon: "🎪",
-      name: "Canva",
-      description:
-        "When I need to quickly create simple assets like presentation slides or concept sketches for brainstorming sessions, Canva helps me work efficiently.",
-    },
-  ]
+  ];
 
-  const developmentTools = [
+  const collabTools = [
     {
-      icon: "🔶",
-      name: "HTML5",
-      description:
-        "I use HTML5 to structure content when prototyping or testing designs in a browser, ensuring layouts and interactions function as intended.",
+      icon: <SiTrello className="w-8 h-8 text-blue-600" />,
+      name: "Trello",
+      description: "I use Trello to organize tasks, manage project progress, and stay on top of deadlines using boards and checklists.",
     },
     {
-      icon: "🎯",
-      name: "CSS3",
-      description:
-        "CSS3 allows me to style and bring my designs to life by adding layouts, colors, animations, and responsive adjustments directly to web pages.",
+      icon: <SiSlack className="w-8 h-8 text-purple-600" />,
+      name: "Slack",
+      description: "Slack helps me communicate efficiently with teams, share updates, and integrate development tools directly into our channels.",
     },
-  ]
-
-  const collaborationTools = [
-    {
-      icon: "📝",
-      name: "Notion",
-      description:
-        "Notion serves as my central workspace for project documentation, design specifications, and team collaboration on design projects.",
-    },
-    {
-      icon: "🎨",
-      name: "Miro",
-      description:
-        "Miro is essential for brainstorming sessions, user journey mapping, and collaborative workshops with stakeholders and team members.",
-    },
-  ]
+  ];
 
   return (
     <div>
-     {/* Header */}
+      {/* Header */}
       <div className="w-full max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-start mb-8">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">Stack</h1>
-          <button className="bg-black text-white hover:bg-gray-800 transition-colors rounded-full px-6 py-2 text-sm font-medium">
-            Contact Me
-          </button>
+           <Link 
+                  to="/contact"
+                  onClick={handleContactClick}
+                  className="bg-black text-white hover:bg-gray-800 transition-colors duration-200 px-8 py-4 sm:px-10 sm:py-5 rounded-2xl text-lg font-medium inline-block"
+                >
+                  Contact Me
+                </Link>
         </div>
 
         {/* Introduction */}
         <p className="text-gray-600 text-lg leading-relaxed mb-12 max-w-4xl">
-          I work with a dynamic stack of tools like Framer and Webflow to bring my ideas to life. My goal is to create
-          designs that are not only visually appealing but also optimized for usability, accessibility, and performance.
+          I work with a modern and flexible stack to build intuitive and engaging digital experiences. Here's a breakdown of my go-to technologies and tools.
         </p>
       </div>
-    <div className="w-full max-w-6xl mx-auto p-6 rounded-xl mt-8 bg-white">
-      {/* Main Content */}
-      <div className="w-full max-w-6xl mx-auto px-6 pb-8">
-        {/* Design and Prototyping Tools */}
+
+      <div className="w-full max-w-6xl mx-auto p-6 rounded-xl mt-8 bg-white">
+        {/* Frontend Technologies */}
         <div className="bg-white rounded-xl border border-gray-100 p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Design and Prototyping Tools</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Frontend Technologies</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {frontendTech.map((tool) => (
+              <div key={tool.name} className="flex gap-4">
+                <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  {tool.icon}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{tool.name}</h3>
+                  <p className="text-gray-600 leading-relaxed">{tool.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Developer Tools */}
+        <div className="bg-white rounded-xl border border-gray-100 p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Developer Tools</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {devTools.map((tool) => (
+              <div key={tool.name} className="flex gap-4">
+                <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  {tool.icon}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{tool.name}</h3>
+                  <p className="text-gray-600 leading-relaxed">{tool.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Design Tools */}
+        <div className="bg-white rounded-xl border border-gray-100 p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Design Tools</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {designTools.map((tool) => (
               <div key={tool.name} className="flex gap-4">
                 <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">{tool.icon}</span>
+                  {tool.icon}
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{tool.name}</h3>
@@ -118,40 +147,14 @@ function StackDetailed() {
           </div>
         </div>
 
-        {/* Development and Implementation Tools */}
+        {/* Collaboration Tools */}
         <div className="bg-white rounded-xl border border-gray-100 p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Development and Implementation Tools</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Collaboration Tools</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {developmentTools.map((tool) => (
+            {collabTools.map((tool) => (
               <div key={tool.name} className="flex gap-4">
                 <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">{tool.icon}</span>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{tool.name}</h3>
-                  <p className="text-gray-600 leading-relaxed">{tool.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Research and Testing Tools */}
-        <div className="bg-white rounded-xl border border-gray-100 p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Research and Testing Tools</h2>
-          <div className="text-gray-500 text-center py-8">
-            <p>Tools and methodologies for user research and usability testing coming soon...</p>
-          </div>
-        </div>
-
-        {/* Collaboration and Productivity Tools */}
-        <div className="bg-white rounded-xl border border-gray-100 p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Collaboration and Productivity Tools</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {collaborationTools.map((tool) => (
-              <div key={tool.name} className="flex gap-4">
-                <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">{tool.icon}</span>
+                  {tool.icon}
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{tool.name}</h3>
@@ -163,8 +166,7 @@ function StackDetailed() {
         </div>
       </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default StackDetailed
+export default StackDetailed;

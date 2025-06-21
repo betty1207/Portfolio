@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 const cards = [
@@ -17,6 +18,13 @@ const cards = [
 ];
 
 function Hero() {
+  const handleContactClick = () => {
+    // Scroll to top smoothly when the link is clicked
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -24,14 +32,18 @@ function Hero() {
       {/* Header section */}
       <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-0 relative mb-6 sm:mb-8">
         <h1 className="text-3xl sm:text-[40px] font-semibold flex-1">Hey👋, I'm Betelhem!</h1>
-        <button className="bg-black text-white hover:bg-gray-800 transition-colors rounded-full px-6 py-2 text-sm font-medium">
-            Contact Me
-          </button>
+        <Link 
+                  to="/contact"
+                  onClick={handleContactClick}
+                  className="bg-black text-white hover:bg-gray-800 transition-colors duration-200 px-8 py-4 sm:px-10 sm:py-5 rounded-2xl text-lg font-medium inline-block"
+                >
+                  Contact Me
+                </Link>
       </div>
 
       {/* Description paragraph */}
       <p className="max-w-2xl text-base sm:text-[20px] text-gray-600 mb-6 sm:mb-10">
-        I'm Betelhem Tsega, a passionate Frontend Developer with multiple hats as you will see below. I focus on creating intuitive, user-friendly, and visually engaging digital experiences that solve real problems and deliver measurable results.
+        I'm Betelhem Tsega, I'm a 4th software Engineer student at Bahirdar University. I'm a passionate Frontend Developer with a creative spark and a results-driven mindset. I wear multiple hats—designer, coder, problem-solver—each one helping me craft digital experiences that are intuitive, user-friendly, and visually compelling. My work is rooted in solving real-world problems through elegant code and thoughtful design, always with a focus on measurable impact.
       </p>
 
       {/* Cards section */}

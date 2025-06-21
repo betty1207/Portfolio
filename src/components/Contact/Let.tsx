@@ -1,24 +1,24 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaTelegramPlane } from "react-icons/fa";
 
 function Let() {
   const socialLinks = [
     { 
-      href: "https://github.com/", 
+      href: "https://github.com/betty1207", 
       icon: <FaGithub className="text-xl" />, 
       label: "GitHub" 
     },
     { 
-      href: "https://linkedin.com/", 
+      href: "https://www.linkedin.com/in/betelhem-tsega-a92a4b300/", 
       icon: <FaLinkedin className="text-xl" />, 
       label: "LinkedIn" 
     },
     { 
-      href: "https://twitter.com/", 
-      icon: <FaTwitter className="text-xl" />, 
-      label: "Twitter" 
+      href: "https://t.me/@omnia_sugit", 
+      icon: <FaTelegramPlane className="text-xl" />, 
+      label: "Telegram" 
     },
     { 
-      href: "mailto:someone@example.com", 
+      href: "mailto:bettygatse8@gmail.com", 
       icon: <FaEnvelope className="text-xl" />, 
       label: "Email" 
     },
@@ -28,7 +28,7 @@ function Let() {
     <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto my-8 sm:my-16">
       <h1 className="text-3xl sm:text-4xl font-bold mb-6">Let's Connect!</h1>
       <p className="mb-8 text-gray-700 text-lg">
-        Whether it's brainstorming a new project, discussing design optimizations, or just sharing creative insights, I'm always excited to collaborate. Reach out to me and let's craft something exceptional — together!
+        Whether it’s bringing an idea to life, refining a user experience, or exchanging creative perspectives, I’m always open to meaningful collaboration. If you're passionate about building thoughtful digital experiences or just want to say hello — feel free to reach out. Let’s create something impactful, together.
       </p>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

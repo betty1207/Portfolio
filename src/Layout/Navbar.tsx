@@ -4,13 +4,13 @@ import img from "../assets/port.jpg";
 import {
   FaGithub,
   FaLinkedin,
-  FaTwitter,
   FaEnvelope,
   FaHome,
   FaUser,
   FaLayerGroup,
   FaFolderOpen,
   FaPhone,
+  FaTelegramPlane,
 } from "react-icons/fa";
 
 const navLinks = [
@@ -22,10 +22,10 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { href: "https://github.com/", icon: <FaGithub />, label: "GitHub" },
-  { href: "https://linkedin.com/", icon: <FaLinkedin />, label: "LinkedIn" },
-  { href: "https://twitter.com/", icon: <FaTwitter />, label: "Twitter" },
-  { href: "mailto:someone@example.com", icon: <FaEnvelope />, label: "Email" },
+  { href: "https://github.com/betty1207", icon: <FaGithub />, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/betelhem-tsega-a92a4b300/", icon: <FaLinkedin />, label: "LinkedIn" },
+  { href: "https://t.me/@omnia_sugit/", icon: <FaTelegramPlane />, label: "Telegram" },
+  { href: "mailto:bettygatse8@gmail.com", icon: <FaEnvelope />, label: "Email" },
 ];
 
 function Navbar() {
