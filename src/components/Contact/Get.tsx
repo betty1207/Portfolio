@@ -104,10 +104,9 @@ const ContactForm = () => {
         throw new Error('Form reference is not available');
       }
 
-      // Your actual EmailJS credentials
-      const serviceID = 'service_gzhhi8e';
-      const templateID = 'template_vm7hhe6'; // Updated with your real template ID
-      const publicKey = '7zplEd4yi3t2RpWGY';
+      const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
+      const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
 
       // Debug: Log form data before sending
       console.log('Form data being sent:', formData);
