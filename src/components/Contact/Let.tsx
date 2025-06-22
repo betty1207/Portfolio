@@ -13,10 +13,10 @@ function Let() {
       label: "LinkedIn" 
     },
     { 
-      href: "https://t.me/@omnia_sugit", 
-      icon: <FaTelegramPlane className="text-xl" />, 
-      label: "Telegram" 
-    },
+      href: "https://t.me/omnia_sugit", 
+      icon: <FaTelegramPlane />, 
+      label: "Telegram"
+     },
     { 
       href: "mailto:bettygatse8@gmail.com", 
       icon: <FaEnvelope className="text-xl" />, 

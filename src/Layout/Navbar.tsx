@@ -24,7 +24,7 @@ const navLinks = [
 const socialLinks = [
   { href: "https://github.com/betty1207", icon: <FaGithub />, label: "GitHub" },
   { href: "https://www.linkedin.com/in/betelhem-tsega-a92a4b300/", icon: <FaLinkedin />, label: "LinkedIn" },
-  { href: "https://t.me/@omnia_sugit/", icon: <FaTelegramPlane />, label: "Telegram" },
+  { href: "https://t.me/omnia_sugit", icon: <FaTelegramPlane />, label: "Telegram" },
   { href: "mailto:bettygatse8@gmail.com", icon: <FaEnvelope />, label: "Email" },
 ];
 
