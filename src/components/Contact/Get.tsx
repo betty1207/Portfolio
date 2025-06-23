@@ -5,14 +5,12 @@ interface FormData {
   name: string;
   email: string;
   message: string;
-  agreed: boolean;
 }
 
 interface FormErrors {
   name: string;
   email: string;
   message: string;
-  agreed: string;
 }
 
 type SubmitStatus = 'success' | 'error' | null;
@@ -23,32 +21,29 @@ const ContactForm = () => {
     name: '',
     email: '',
     message: '',
-    agreed: false,
   });
 
   const [errors, setErrors] = useState<FormErrors>({
     name: '',
     email: '',
     message: '',
-    agreed: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    const checked = type === 'checkbox' ? (e.target as HTMLInputElement).checked : undefined;
+    const { name, value } = e.target;
 
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: value,
     }));
 
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({
         ...prev,
-        [name]: ''
+        [name]: '',
       }));
     }
   };
@@ -59,7 +54,6 @@ const ContactForm = () => {
       name: '',
       email: '',
       message: '',
-      agreed: '',
     };
 
     if (!formData.name.trim()) {
@@ -77,11 +71,6 @@ const ContactForm = () => {
 
     if (!formData.message.trim()) {
       newErrors.message = 'Please fill out this field';
-      valid = false;
-    }
-
-    if (!formData.agreed) {
-      newErrors.agreed = 'Please agree to the privacy policy';
       valid = false;
     }
 
@@ -108,21 +97,16 @@ const ContactForm = () => {
       const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
 
-      // Debug: Log form data before sending
-      console.log('Form data being sent:', formData);
-
-      const result = await emailjs.sendForm(serviceID, templateID, formRef.current, publicKey);
-      console.log('EmailJS response:', result); // Debug success
-
+      await emailjs.sendForm(serviceID, templateID, formRef.current, publicKey);
+      
       setSubmitStatus('success');
       setFormData({
         name: '',
         email: '',
         message: '',
-        agreed: false,
       });
     } catch (error) {
-      console.error('EmailJS error details:', error); // Detailed error logging
+      console.error('EmailJS error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -202,8 +186,6 @@ const ContactForm = () => {
             />
             {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
           </div>
-
-          
 
           <button
             type="submit"
