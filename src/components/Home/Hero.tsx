@@ -43,7 +43,7 @@ function Hero() {
 
       {/* Description paragraph */}
       <p className="max-w-2xl text-base sm:text-[20px] text-gray-600 mb-6 sm:mb-10">
-        I'm Betelhem Tsega, I'm a 4th software Engineer student at Bahirdar University. I'm a passionate Frontend Developer with a creative spark and a results-driven mindset. I wear multiple hats—designer, coder, problem-solver—each one helping me craft digital experiences that are intuitive, user-friendly, and visually compelling. My work is rooted in solving real-world problems through elegant code and thoughtful design, always with a focus on measurable impact.
+        I'm Betelhem Tsega, I'm a 4th software Engineer student at Bahirdar University. I'm a passionate Frontend Developer with a creative spark and a results-driven mindset. I wear multiple hats-designer, coder, problem-solver-each one helping me craft digital experiences that are intuitive, user-friendly, and visually compelling. My work is rooted in solving real-world problems through elegant code and thoughtful design, always with a focus on measurable impact.
       </p>
 
       {/* Cards section */}
